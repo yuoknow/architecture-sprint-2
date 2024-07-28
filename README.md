@@ -33,3 +33,31 @@ curl --silent http://ifconfig.me
 ## Доступные эндпоинты
 
 Список доступных эндпоинтов, swagger http://<ip виртуальной машины>:8080/docs
+
+## Проект с шардированием, репликацией и кешем
+
+### Запуск
+
+```shell
+docker compose -f mongo-sharding-repl-cache/compose.yaml up -d
+```
+
+### Инициализация шардирования
+
+```shell
+./mongo-sharding-repl-cache/mongo-init.sh
+```
+
+### Наполнение данными
+```shell
+./mongo-sharding-repl-cache/mongo-add-data.sh
+```
+
+### Остановка
+
+```shell
+docker compose -f mongo-sharding-repl-cache/compose.yaml down
+```
+
+## Итоговая схема
+[Ссылка на схему](https://drive.google.com/file/d/1ahREQUv_ZG-0HV9O96pb332uwwAoFE5-/view?usp=sharing)
